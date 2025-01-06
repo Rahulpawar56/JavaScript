@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Dyanamic column</title>
+    <link rel="stylesheet" href="/AddDynamicColumn.css">
+
+    <script type="text/javascript">
+        var val;
+        let table=document.createElement("table"); 
+            let tbody=document.createElement("tbody");
+            let tr=document.createElement("tr");
+        function show(value)
+        {
+            val=value;
+        }
+        function showTable()
+        {
+           
+            for(var i=0;i<val;i++)
+           {
+               var td=document.createElement("td");
+                td.innerHTML="Column"+(i+1);
+                tr.appendChild(td);
+           }
+           tbody.appendChild(tr);
+           for(var i=0;i<=2;i++)
+           {
+            tr=document.createElement("tr");
+            for(var j=0;j<val;j++)
+             {
+               var td=document.createElement("td");
+                td.innerHTML=" ";
+                tr.appendChild(td);
+             }
+             tbody.appendChild(tr);
+           }
+           let box=document.getElementById("t1");
+           table.appendChild(tbody);
+           box.appendChild(table);
+
+        }
+  function addRow() 
+  {  
+    tr=document.createElement("tr");
+    for (let i = 0; i < val; i++) {
+                const td = document.createElement("td");
+                const input = document.createElement("input");
+                input.setAttribute("type", "text");
+                input.setAttribute("id", "text1");
+                input.setAttribute("placeholder", "");
+                  td.appendChild(input);
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+            table.appendChild(tbody);
+  }  
+  function deleteRow()
+  {
+     for(let i=val-1;i>=0;i--)
+     {
+
+     }
+  }         
+        
+    </script>
+</head>
+<body>
+    <div class="box" >
+        <input type="text" id="txt" placeholder="Enter a column"  onkeyup="show(this.value)">
+        <input type="button" id="btn" value="CLickMe" onclick="showTable()" >
+        <div class="box1" id="t1"></div>
+    </div>
+    <input type="button" id="btn1" value="Add Row" onclick="addRow()">
+    <input type="button" id="btn2" value="DeleteRow" onclick="deleteRow()">
+</body>
+</html>

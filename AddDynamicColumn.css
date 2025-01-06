@@ -1,0 +1,67 @@
+*
+{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.box
+{
+    width: 60%;
+    min-height: 200px;
+    /* border: 1px solid #000; */
+    margin: auto;
+    margin-top: 10px;
+
+}
+#txt
+{
+    width: 200px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+#btn
+{
+    width: 100px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+#btn1
+{
+    width: 100px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 280px;
+    margin-top: 10px;
+}
+#btn2
+{
+    width: 100px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+table{
+    width: 100%;
+    border: 1px solid #000;
+
+}
+td
+{
+    border: 1px solid #000;
+    padding: 10px;
+    font-weight: bold;
+}
