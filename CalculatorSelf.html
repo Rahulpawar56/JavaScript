@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+	<head>
+		<title>Calculator Using Javascript</title>
+		<style>
+			.container{
+				width:40%;
+				height:500px;
+				margin:auto;
+				background-color:grey;
+				margin-top:50px;
+				position:relative;
+				border-radius:10px;
+			}
+			#txt {
+				position:absolute;
+				width:90%;
+				height:30px;
+				margin:25px;
+				padding:5px;
+				background-color:white;
+				border:0;
+			}
+			input {
+			border-radius:10px;
+			height:50px;
+			width:100px;
+			margin-top:5px;
+			margin-left:20px;
+			border:1px solid light-grey;
+			}
+		</style>
+		<script type="text/javascript">
+			let display="";
+			function Calc(value)
+			{
+				const txt=document.getElementById("txt");
+				
+				if(value=="=")
+				{
+					try
+					{
+						txt.value=eval(display);
+						display=txt.value;
+					}
+					catch(error)
+					{
+						txt.value="Error";
+						display="";
+					}
+				}
+				else if(value=="CE")
+				{  //clear all
+					display="";
+					txt.value=display;
+				}
+				else {
+					display+=value;
+					txt.value=display;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<input type="text" id="txt" value="" placeholder="0" disabled></input>
+			<br><br><br><br><br>
+			<input type="button" id="btn1" value="mc" onclick="Calc('mc')"></input>
+			<input type="button" id="btn2" value="mr" onclick="Calc('mr')"></input>
+			<input type="button" id="btn3" value="m-" onclick="Calc('m-')"></input>
+			<input type="button" id="btn4" value="m+" onclick="Calc('m+')"></input>
+			<br>
+			<input type="button" id="btn5" value="CE" onclick="Calc('CE')"></input>
+			<input type="button" id="btn6" value="x" onclick="Calc('*')"></input>
+			<input type="button" id="btn7" value="%" onclick="Calc('%')"></input>
+			<input type="button" id="btn8" value="/" onclick="Calc('/')"></input>
+			<br>
+			<input type="button" id="btn9" value="7" onclick="Calc('7')"></input>
+			<input type="button" id="btn10" value="8" onclick="Calc('8')"></input>
+			<input type="button" id="btn11" value="9" onclick="Calc('9')"></input>
+			<input type="button" id="btn12" value="*"onclick="Calc('*')"></input>
+			<br>
+			<input type="button" id="btn13" value="4" onclick="Calc('4')"></input>
+			<input type="button" id="btn14" value="5" onclick="Calc('5')"></input>
+			<input type="button" id="btn15" value="6" onclick="Calc('6')"></input>
+			<input type="button" id="btn16" value="-" onclick="Calc('-')"></input>
+			<br>
+			<input type="button" id="btn17" value="1" onclick="Calc('1')"></input>
+			<input type="button" id="btn18" value="2" onclick="Calc('2')"></input>
+			<input type="button" id="btn19" value="3" onclick="Calc('3')"></input>
+			<input type="button" id="btn20" value="+" onclick="Calc('+')"></input>
+			<br>
+			<input type="button" id="btn21" value="0" onclick="Calc('0')"></input>
+			<input type="button" id="btn22" value="." onclick="Calc('.')"></input>
+			<input type="button" id="btn23" value="+/-" onclick="Calc('+/-')"></input>
+			<input type="button" id="btn24" value="=" onclick="Calc('=')"></input>
+			<br>
+			<input type="button" id="btn25" value="pi" onclick="Calc('Math.PI')"></input>
+			<input type="button" id="btn26" value="x^y"onclick="Calc('^')"></input>
+			<input type="button" id="btn27" value="R2" onclick="Calc('sqrt')"></input>
+			<input type="button" id="btn28" value="R0" onclick="Calc('round')"></input>
+		</div>
+	</body>
+</HTML>
